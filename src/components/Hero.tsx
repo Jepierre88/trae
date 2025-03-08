@@ -30,10 +30,10 @@ export default function Hero() {
         <div className="space-y-8 text-center md:text-left">
           <div className="space-y-4">
             <p className="text-lg font-medium text-blue-600 dark:text-blue-400 animate-fade-in">
-              Welcome to my portfolio
+              ¡Welcome!
             </p>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight animate-fade-in-up">
-              Hi, I'm <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 text-transparent bg-clip-text">Your Name</span>
+              Hi, I&apos;m <span className="bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 text-transparent bg-clip-text">Jean Pierre</span>
             </h1>
             <p className="text-xl text-foreground/80 animate-fade-in-up delay-100">
               A passionate full-stack developer crafting beautiful and functional web experiences

@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, Effects } from '@react-three/drei';
+import { OrbitControls, Float } from '@react-three/drei';
 import { useMemo } from 'react';
 import { Bloom, EffectComposer, SSAO } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
@@ -22,10 +22,11 @@ function Shape({ position, color }: { position: [number, number, number]; color:
     >
       {geometry === 'box' && (
         <mesh castShadow receiveShadow>
-          <boxGeometry args={[1, 1, 1]} />
+          <boxGeometry args={[2,2, 2]} />
           <meshPhysicalMaterial
             color={color}
             transparent
+            
             opacity={0.7}
             metalness={0.5}
             roughness={0.2}
@@ -37,7 +38,7 @@ function Shape({ position, color }: { position: [number, number, number]; color:
       )}
       {geometry === 'sphere' && (
         <mesh castShadow receiveShadow>
-          <sphereGeometry args={[0.7, 32, 32]} />
+          <sphereGeometry args={[2, 32, 32]} />
           <meshPhysicalMaterial
             color={color}
             transparent
@@ -52,7 +53,7 @@ function Shape({ position, color }: { position: [number, number, number]; color:
       )}
       {geometry === 'octahedron' && (
         <mesh castShadow receiveShadow>
-          <octahedronGeometry args={[0.8]} />
+          <octahedronGeometry args={[0.7]} />
           <meshPhysicalMaterial
             color={color}
             transparent
@@ -71,15 +72,17 @@ function Shape({ position, color }: { position: [number, number, number]; color:
 
 export default function Scene3D() {
   const shapes = useMemo(() => {
-    return Array.from({ length: 15 }, (_, i) => ({
+    return Array.from({ length: 15 }, () => ({
       position: [
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 5
+        (Math.random() - 0.5) * 30,  // Aumenté el rango a 30 para mayor separación en X
+        (Math.random() - 0.5) * 30,  // Aumenté el rango a 30 para mayor separación en Y
+        (Math.random() - 0.5) * 15   // Aumenté el rango a 15 para mayor separación en Z
       ] as [number, number, number],
       color: `hsl(${Math.random() * 360}, 50%, 75%)`
     }));
   }, []);
+  
+  
 
   return (
     <div className="absolute inset-0 -z-10">
