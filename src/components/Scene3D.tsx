@@ -22,17 +22,18 @@ function Shape({ position, color }: { position: [number, number, number]; color:
     >
       {geometry === 'box' && (
         <mesh castShadow receiveShadow>
-          <boxGeometry args={[2,2, 2]} />
+          <boxGeometry args={[2, 2, 2]} />
           <meshPhysicalMaterial
             color={color}
             transparent
-            
             opacity={0.7}
-            metalness={0.5}
-            roughness={0.2}
-            envMapIntensity={1}
+            metalness={0.8}
+            roughness={0.1}
+            envMapIntensity={2}
             wireframe
             wireframeLinewidth={2}
+            emissive={color}
+            emissiveIntensity={0.5}
           />
         </mesh>
       )}
@@ -86,17 +87,26 @@ export default function Scene3D() {
 
   return (
     <div className="absolute inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 15], fov: 75 }} shadows>
+      <Canvas camera={{ position: [0, 0, 15], fov: 75 }} shadows dpr={[1, 2]}>
         <color attach="background" args={["#000000"]} />
         <fog attach="fog" args={["#000000", 5, 30]} />
-        <ambientLight intensity={0.2} />
-        <pointLight position={[10, 10, 10]} intensity={1} castShadow />
+        <ambientLight intensity={0.3} />
+        <pointLight position={[10, 10, 10]} intensity={1.5} castShadow />
+        <spotLight
+          position={[5, 5, 5]}
+          angle={0.3}
+          penumbra={1}
+          intensity={2}
+          castShadow
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
+        />
         <directionalLight
           position={[-5, 5, 5]}
-          intensity={0.5}
+          intensity={0.8}
           castShadow
-          shadow-mapSize-width={1024}
-          shadow-mapSize-height={1024}
+          shadow-mapSize-width={2048}
+          shadow-mapSize-height={2048}
         />
         <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.5} />
         {shapes.map((shape, i) => (
