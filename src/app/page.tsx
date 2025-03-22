@@ -30,9 +30,10 @@ export default function Home() {
                   {/* Asegúrate de agregar una imagen o un video de vista previa del proyecto */}
                   <a href="https://pay.coins-colombia.com/auth/login" target="_blank" rel="noopener noreferrer">
                     <Image
-                      src="path_to_image_or_screenshot.png" // Cambia por la imagen de vista previa de tu proyecto
+                      src="/images/coinspay-preview.png" // Cambia por la imagen de vista previa de tu proyecto
                       alt="CoinsPay Project Screenshot"
                       className="object-cover w-full h-full"
+                      fill
                     />
                   </a>
                 </div>
@@ -52,6 +53,35 @@ export default function Home() {
                     <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm dark:bg-green-900 dark:text-green-200">Node.js</span>
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm dark:bg-purple-900 dark:text-purple-200">Next.js</span>
                     <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm dark:bg-red-900 dark:text-red-200">Nest.js</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Spotify Clone Project Card */}
+              <div className="bg-foreground/5 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20 border border-foreground/10 backdrop-blur-sm">
+                <div className="aspect-video bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 relative group overflow-hidden">
+                  <a href="https://spotify-clone-seven-tau-16.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="/images/spotify-clone-preview.png"
+                      alt="Spotify Clone Project Screenshot"
+                      className="object-cover w-full h-full"
+                      fill
+                    />
+                  </a>
+                </div>
+                <div className="p-6 space-y-4 relative z-10 bg-gradient-to-b from-transparent via-background to-background">
+                  <h3 className="text-xl font-semibold mb-2">
+                    <a href="https://spotify-clone-seven-tau-16.vercel.app" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                      {"Spotify Clone"}
+                    </a>
+                  </h3>
+                  <p className="text-foreground/70 mb-4">
+                    A modern Spotify clone built with React and Next.js, featuring a sleek user interface and streaming platform capabilities. This project demonstrates advanced front-end development skills and responsive design implementation.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm dark:bg-blue-900 dark:text-blue-200">React</span>
+                    <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm dark:bg-purple-900 dark:text-purple-200">Next.js</span>
+                    <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm dark:bg-pink-900 dark:text-pink-200">Tailwind CSS</span>
                   </div>
                 </div>
               </div>
