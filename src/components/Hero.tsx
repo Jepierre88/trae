@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 import Scene3D from './Scene3D';
 
@@ -8,25 +7,6 @@ export default function Hero() {
       <Scene3D />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 animate-gradient" />
       <div className="absolute inset-0 bg-background/50 backdrop-blur-[2px]" />
-      <div className="absolute inset-0 z-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute animate-float-${i % 3} opacity-20`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              transform: `rotate(${Math.random() * 360}deg)`,
-              width: `${Math.random() * 100 + 50}px`,
-              height: `${Math.random() * 100 + 50}px`,
-              background: `linear-gradient(45deg, var(--background), transparent)`,
-              borderRadius: Math.random() > 0.5 ? '50%' : '0',
-              filter: 'blur(2px)',
-              animation: `float-${i % 3} ${Math.random() * 10 + 10}s infinite`
-            }}
-          />
-        ))}
-      </div>
       <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center relative z-10">
         <div className="space-y-8 text-center md:text-left">
           <div className="space-y-4">
@@ -56,15 +36,9 @@ export default function Hero() {
           </div>
         </div>
         <div className="relative aspect-square max-w-md mx-auto animate-fade-in-up delay-300">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/30 to-accent/30 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/30 to-accent/30 rounded-full blur-[160px] animate-pulse" />
           <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
-            <Image
-              src="/profile-placeholder.jpg"
-              alt="Profile"
-              width={500}
-              height={500}
-              className="rounded-full shadow-2xl"
-              priority
+            <div className="w-44 h-44"
             />
           </div>
         </div>
