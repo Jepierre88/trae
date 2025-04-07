@@ -17,8 +17,20 @@ export default function Hero() {
               Hi, I&apos;m <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text animate-gradient">Jean Pierre</span>
             </h1>
             <p className="text-xl text-foreground/80 animate-fade-in-up delay-100">
-              A passionate full-stack developer crafting beautiful and functional web experiences
+              A{" "}
+              <span className="font-bold text-transparent bg-clip-text"
+                style={{
+                  backgroundImage: 'linear-gradient(to right, var(--color-start), var(--color-middle), var(--color-end))',
+                  backgroundSize: '200% auto',
+                  animation: 'var(--animate-gradient)',
+                }}>
+
+                1 year experienced
+              </span>{" "}
+              full-stack developer crafting beautiful and functional web experiences
             </p>
+
+
           </div>
           <div className="flex gap-4 justify-center md:justify-start animate-fade-in-up delay-200">
             <a
